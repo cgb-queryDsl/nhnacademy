@@ -1,0 +1,77 @@
+.header {
+    width: 100%;
+    height: 50px;
+}
+
+.header-left {
+    float: left;
+    text-decoration: underline;
+}
+
+.header-right {
+    float: right;
+    text-decoration: underline;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.calendarHead {
+    width: 100%;
+    height: 60px;
+}
+
+.days {
+    width: 100%;
+    height: 40px;
+    display: flex;
+}
+
+.day {
+    flex:1;
+    font-size: 20px;
+}
+
+.day-sun {
+    color: red;
+    flex:1;
+    font-size: 20px;
+}
+
+.day-sat {
+    color: blue;
+    flex:1;
+    font-size: 20px;
+}
+
+.dayList {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dayNum {
+    width: 14.2%;
+    height: 180px;
+}
+
+.todoInput {
+    width: 100%;
+    height: 20px;
+}
+
+.allDeleteButton {
+    font-weight: bold;
+    padding-left: 60%;
+}
+
+#todo {
+    background-color:deepskyblue;
+}
