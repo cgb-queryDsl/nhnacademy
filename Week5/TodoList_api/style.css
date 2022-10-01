@@ -1,0 +1,102 @@
+.header {
+    width: 100%;
+    height: 50px;
+}
+
+.header-left {
+    float: left;
+    text-decoration: underline;
+}
+
+.header-right {
+    float: right;
+    text-decoration: underline;
+}
+
+.header-api {
+    width: 100%;
+    height: 500px;
+    /* border: 1px solid black; */
+}
+
+#api-left {
+    float : left;
+    width: 49%;
+    height: 500px;
+    border: 1px solid black;
+    overflow-y : auto;
+    margin-top: 50px;
+}
+
+#api-right {
+    float : right;
+    width: 49%;
+    height: 500px;
+    border: 1px solid black;
+    margin-top: 50px;
+    overflow-y: auto;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    padding-top: 10%;
+}
+
+.calendarHead {
+    width: 100%;
+    height: 60px;
+}
+
+.days {
+    width: 100%;
+    height: 40px;
+    display: flex;
+}
+
+.day {
+    flex:1;
+    font-size: 20px;
+}
+
+.day-sun {
+    color: red;
+    flex:1;
+    font-size: 20px;
+}
+
+.day-sat {
+    color: blue;
+    flex:1;
+    font-size: 20px;
+}
+
+.dayList {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dayNum {
+    width: 14.2%;
+    height: 180px;
+    overflow-y: auto;
+}
+
+.todoInput {
+    width: 100%;
+    height: 20px;
+}
+
+.allDeleteButton {
+    font-weight: bold;
+    padding-left: 60%;
+}
+
+#todo {
+    background-color:deepskyblue;
+}

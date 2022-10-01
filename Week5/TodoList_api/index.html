@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo List</title>
+        <link rel="stylesheet" href="./style.css">
+        <script defer src="./index.js"></script>
+
+    </head>
+
+    <body>
+        <div class="header"> 
+            <div class="header-left">
+                <p>이전(달)</p>
+            </div>
+
+            <div class="header-right">
+                <p>다음(달)</p>
+            </div>
+        </div>
+
+        <h1 style="text-align: center;">달력은 아래에</h1>
+
+        <select id="eventDt" name="eventDt">
+            <option value="">Date 선택</option>
+            <option value="2022-09-01">2022-09-01(목)</option>
+            <option value="2022-09-02">2022-09-02(화)</option>
+            <option value="2022-09-03">2022-09-03(수)</option>
+            <option value="2022-09-04">2022-09-04(목)</option>
+            <option value="2022-09-05">2022-09-05(금)</option>
+            <option value="2022-09-06">2022-09-06(월)</option>
+            <option value="2022-09-07">2022-09-07(화)</option>
+            <option value="2022-09-08">2022-09-08(수)</option>
+            <option value="2022-09-09">2022-09-09(목)</option>
+            <option value="2022-09-10">2022-09-10(금)</option>
+            <option value="2022-09-11">2022-09-11(월)</option>
+            <option value="2022-09-12">2022-09-12(화)</option>
+            <option value="2022-09-13">2022-09-13(수)</option>
+            <option value="2022-09-14">2022-09-14(목)</option>
+            <option value="2022-09-15">2022-09-15(금)</option>
+            <option value="2022-09-16">2022-09-16(월)</option>
+            <option value="2022-09-17">2022-09-17(화)</option>
+            <option value="2022-09-18">2022-09-18(수)</option>
+            <option value="2022-09-19">2022-09-19(목)</option>
+            <option value="2022-09-20">2022-09-20(금)</option>
+            <option value="2022-09-21">2022-09-21(월)</option>
+            <option value="2022-09-22">2022-09-22(화)</option>
+            <option value="2022-09-23">2022-09-23(수)</option>
+            <option value="2022-09-24">2022-09-24(목)</option>
+            <option value="2022-09-25">2022-09-25(금)</option>
+            <option value="2022-09-26">2022-09-26(월)</option>
+            <option value="2022-09-27">2022-09-27(화)</option>
+            <option value="2022-09-28">2022-09-28(수)</option>
+            <option value="2022-09-29">2022-09-29(목)</option>
+            <option value="2022-09-30">2022-09-30(금)</option>
+        </select>
+        <input type="text" id="subject" name="subject" />
+        <button type="button" onclick="saveEvent()">등록</button>
+
+        <div class="header-api">
+            <div id="api-left">
+                <h2>2022-09-01 TODO LIST</h2>
+                <ul id="todo-2022-09-01"></ul>
+                <h2>2022-09-02 TODO LIST</h2>
+                <ul id="todo-2022-09-02"></ul>
+                <h2>2022-09-03 TODO LIST</h2>
+                <ul id="todo-2022-09-03"></ul>
+                <h2>2022-09-04 TODO LIST</h2>
+                <ul id="todo-2022-09-04"></ul>
+                <h2>2022-09-05 TODO LIST</h2>
+                <ul id="todo-2022-09-05"></ul>
+                <h2>2022-09-06 TODO LIST</h2>
+                <ul id="todo-2022-09-06"></ul>
+                <h2>2022-09-07 TODO LIST</h2>
+                <ul id="todo-2022-09-07"></ul>
+                <h2>2022-09-08 TODO LIST</h2>
+                <ul id="todo-2022-09-08"></ul>
+                <h2>2022-09-09 TODO LIST</h2>
+                <ul id="todo-2022-09-09"></ul>
+                <h2>2022-09-10 TODO LIST</h2>
+                <ul id="todo-2022-09-10"></ul>
+                <h2>2022-09-11 TODO LIST</h2>
+                <ul id="todo-2022-09-11"></ul>
+                <h2>2022-09-12 TODO LIST</h2>
+                <ul id="todo-2022-09-12"></ul>
+                <h2>2022-09-13 TODO LIST</h2>
+                <ul id="todo-2022-09-13"></ul>
+                <h2>2022-09-14 TODO LIST</h2>
+                <ul id="todo-2022-09-14"></ul>
+                <h2>2022-09-15 TODO LIST</h2>
+                <ul id="todo-2022-09-15"></ul>
+                <h2>2022-09-16 TODO LIST</h2>
+                <ul id="todo-2022-09-16"></ul>
+                <h2>2022-09-17 TODO LIST</h2>
+                <ul id="todo-2022-09-17"></ul>
+                <h2>2022-09-18 TODO LIST</h2>
+                <ul id="todo-2022-09-18"></ul>
+                <h2>2022-09-19 TODO LIST</h2>
+                <ul id="todo-2022-09-19"></ul>
+                <h2>2022-09-20 TODO LIST</h2>
+                <ul id="todo-2022-09-20"></ul>
+                <h2>2022-09-21 TODO LIST</h2>
+                <ul id="todo-2022-09-21"></ul>
+                <h2>2022-09-22 TODO LIST</h2>
+                <ul id="todo-2022-09-22"></ul>
+                <h2>2022-09-23 TODO LIST</h2>
+                <ul id="todo-2022-09-23"></ul>
+                <h2>2022-09-24 TODO LIST</h2>
+                <ul id="todo-2022-09-24"></ul>
+                <h2>2022-09-25 TODO LIST</h2>
+                <ul id="todo-2022-09-25"></ul>
+                <h2>2022-09-26 TODO LIST</h2>
+                <ul id="todo-2022-09-26"></ul>
+                <h2>2022-09-27 TODO LIST</h2>
+                <ul id="todo-2022-09-27"></ul>
+                <h2>2022-09-28 TODO LIST</h2>
+                <ul id="todo-2022-09-28"></ul>
+                <h2>2022-09-29 TODO LIST</h2>
+                <ul id="todo-2022-09-29"></ul>
+                <h2>2022-09-30 TODO LIST</h2>
+                <ul id="todo-2022-09-30"></ul>
+            </div>
+                
+            <div id="api-right">
+                <h1>2022-09 TODO LIST</h1>
+                <ul id="todo-2022-09"></ul>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="title">
+            <span>[</span>
+            <span id="year"></span>
+            <span>-</span>
+            <span id="month"></span>
+            <span>] ❗️Todo List❗️</span>
+        </div>
+        
+        <div class="calendarHead">
+            <div class="days">
+                <div class="day-sun">SUN</div>
+                <div class="day">MON</div>
+                <div class="day">TUE</div>
+                <div class="day">WEN</div>
+                <div class="day">THU</div>
+                <div class="day">FRI</div>
+                <div class="day-sat">SAT</div>
+            </div>
+            <hr/>
+        </div>    
+    </body>
+</html>
