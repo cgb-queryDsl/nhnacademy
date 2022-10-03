@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>코로나 19 현황</title>
+        <link rel="stylesheet" href="./style1.css">
+        <script async src="./index1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>코로나 19 현황</h1>
+        </div>
+
+       
+        <div id="bar-left" onclick="goPrev()">&lt;</div>
+        <div id="bar-right" onclick="goNext()">&gt;</div>
+        
+        
+        <div id="middle"></div>
+
+        <br/>
+        
+        <hr/>
+
+        <div id="bottom">
+            <canvas id="line-chart"></canvas>
+        </div>
+
+    </body>
+
+</html>
