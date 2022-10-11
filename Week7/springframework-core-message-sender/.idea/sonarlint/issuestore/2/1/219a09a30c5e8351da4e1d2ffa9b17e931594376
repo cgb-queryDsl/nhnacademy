@@ -1,0 +1,8 @@
+
+n
+java:S1192"RDefine a constant instead of duplicating this literal "=================" 3 times.(²ÏË8”Ì›¬¼0
+Q	java:S125"<This block of commented-out lines of code should be removed.(¿ïàŸ
+M	java:S106"9Replace this use of System.out or System.err by a logger.(²ÏË
+Q	java:S125"<This block of commented-out lines of code should be removed.(™Îˆ¿
+M	java:S106"9Replace this use of System.out or System.err by a logger.(²ÏË
+T	java:S106"9Replace this use of System.out or System.err by a logger.(²ÏË8œÌ›¬¼0

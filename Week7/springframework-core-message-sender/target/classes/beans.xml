@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean-->
+<!--            id="emailMessageSender"-->
+<!--            class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"-->
+<!--            scope="singleton"-->
+<!--            init-method="init" destroy-method="destroy">-->
+<!--    </bean>-->
+
+    <bean
+            id="smsMessageSender"
+            class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender"
+            scope="prototype"
+            init-method="init" destroy-method="destroy">
+    </bean>
+
+    <!-- 생성자 주입   /-->
+<!--    <bean-->
+<!--            id="messageSendService"-->
+<!--            class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService">-->
+<!--            <constructor-arg ref="smsMessageSender" />-->
+<!--            <constructor-arg ref="emailMessageSender"/>-->
+<!--    </bean>-->
+
+    <!-- Setter 주입   -->
+<!--    <bean-->
+<!--            id="messageSendService"-->
+<!--            class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService">-->
+<!--            <property name="smsMessageSender" ref="smsMessageSender"/>-->
+<!--    </bean>-->
+
+    <!-- Autowired 주입 (byType)  -->
+<!--    <bean-->
+<!--            id="messageSendService"-->
+<!--            class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService"-->
+<!--            autowire="byType">-->
+<!--    </bean>-->
+
+    <!-- Autowired 주입 (byName)   -->
+    <bean
+            id="messageSendService"
+            class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService"
+            autowire="byName">
+    </bean>
+
+</beans>
