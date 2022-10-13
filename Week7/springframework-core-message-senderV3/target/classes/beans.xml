@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- annotation 설정을 위해 추가-->
+    <context:annotation-config/>
+
+    <!-- @Required 애너테이션 사용을 위해 추가 -->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+
+    <context:property-placeholder location="classpath:sender.properties" />
+
+    <bean
+            id="emailMessageSender"
+            class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"
+            init-method="init" destroy-method="destroy">
+    </bean>
+
+    <bean
+            id="smsMessageSender"
+            class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender"
+            init-method="init" destroy-method="destroy">
+        <qualifier type="com.nhnacademy.edu.springframework.messagesender.annotation.SMS"/>
+    </bean>
+
+    <!-- 생성자 주입   /-->
+<!--    <bean-->
+<!--            id="messageSendService"-->
+<!--            class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService">-->
+<!--            <constructor-arg ref="smsMessageSender" />-->
+<!--            <constructor-arg ref="emailMessageSender"/>-->
+<!--    </bean>-->
+
+    <!-- Setter 주입   -->
+    <bean
+            id="messageSendService"
+            class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService">
+<!--            <property name="smsMessageSender" ref="smsMessageSender"/>-->
+    </bean>
+
+    <!-- Autowired 주입 (byType)  -->
+<!--    <bean-->
+<!--            id="messageSendService"-->
+<!--            class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService"-->
+<!--            autowire="byType">-->
+<!--    </bean>-->
+
+    <!-- Autowired 주입 (byName)   -->
+<!--    <bean-->
+<!--            id="messageSendService"-->
+<!--            class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService"-->
+<!--            autowire="byName">-->
+<!--    </bean>-->
+
+</beans>
