@@ -8,3 +8,4 @@
 |22.08.29 ~ 22.09.23 | Java-Tip |
 |22.09.26 ~ 22.09.30| HTML, CSS, JavaScript |
 |22.10.04 ~ 22.10.07| Intellij, Gradle, Maven, Git |
+|22.10.11 ~ 22.10.14| Spring Core |
