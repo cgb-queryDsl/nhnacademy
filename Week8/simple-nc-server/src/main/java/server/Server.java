@@ -37,6 +37,7 @@ public class Server {
 
                 sender.start();
                 receiver.start();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }

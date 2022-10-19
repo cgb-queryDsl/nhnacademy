@@ -1,19 +1,21 @@
 package server;
 
+import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class Sender extends Thread{
     Socket socket;
-    DataOutputStream out;
+    PrintWriter printWriter;
 
     public Sender(Socket socket) {
         this.socket = socket;
 
         try {
-            out = new DataOutputStream(socket.getOutputStream());
+            printWriter = new PrintWriter(socket.getOutputStream());
         } catch (Exception e){
         }
     }
@@ -21,11 +23,9 @@ public class Sender extends Thread{
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
-        while (out != null) {
-            try {
-                out.writeUTF(scanner.nextLine());
-            } catch (IOException e){
-            }
+        while (printWriter != null) {
+            printWriter.println(scanner.nextLine());
+            printWriter.flush();
         }
     }
 }

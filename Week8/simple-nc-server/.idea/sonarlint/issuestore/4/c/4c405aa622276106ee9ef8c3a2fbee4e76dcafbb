@@ -1,0 +1,12 @@
+
+e
+java:S2095"JUse try-with-resources or close this "ServerSocket" in a "finally" clause.(»·Ìúüÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¶ýúõþÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.( Ù„ýûÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Øª…ð
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ïå“Àûÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(öÞóãÿÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¶ýúõþÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(å»ëÿüÿÿÿÿ
+@
+java:S1197"*Move the array designators [] to the type.(Øï¹û
