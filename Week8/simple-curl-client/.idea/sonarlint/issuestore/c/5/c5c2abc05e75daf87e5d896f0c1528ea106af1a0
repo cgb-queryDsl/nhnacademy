@@ -1,0 +1,88 @@
+
+a	java:S112ö"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112ø"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a
+java:S11928"LDefine a constant instead of duplicating this literal "Accept: */*" 8 times.(×Å½j
+s
+java:S11929"XDefine a constant instead of duplicating this literal "User-Agent: curl/7.79.1" 8 times.(ª¤Ö›ıÿÿÿÿ
+m
+java:S11926"RDefine a constant instead of duplicating this literal "GET /get HTTP/1.1" 4 times.(ß‡Õ‹øÿÿÿÿ
+h
+java:S11927"RDefine a constant instead of duplicating this literal "Host: httpbin.org" 8 times.(ÇÊï½
+:
+java:S1643¸"Use a StringBuilder instead.(–¹Ö8¿áÜ¦¿0
+k
+java:S2259·"HA "NullPointerException" could be thrown; "fileReader" is nullable here.(Ç»Úœøÿÿÿÿ8óÚß¦¿0
+[
+java:S2095Ô"DUse try-with-resources or close this "Socket" in a "finally" clause.(ü¢äİ
+Z
+java:S2095^"DUse try-with-resources or close this "Socket" in a "finally" clause.(ü¢äİ
+[
+java:S2095¨"DUse try-with-resources or close this "Socket" in a "finally" clause.(ü¢äİ
+Z
+java:S20951"DUse try-with-resources or close this "Socket" in a "finally" clause.(ü¢äİ
+[
+java:S2095ˆ"DUse try-with-resources or close this "Socket" in a "finally" clause.(ü¢äİ
+[
+java:S2095û"DUse try-with-resources or close this "Socket" in a "finally" clause.(ü¢äİ
+j
+java:S2095¡"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(µªä’8Î¢ß¦¿0
+b
+java:S2095­"DUse try-with-resources or close this "Socket" in a "finally" clause.(ü¢äİ8ôÚß¦¿0
+i
+java:S3776"SRefactor this method to reduce its Cognitive Complexity from 123 to the 15 allowed.(Çµí‘
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¶ıúõşÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ˆÂÉÆ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¿ÜÔ“
+N	java:S106"9Replace this use of System.out or System.err by a logger.(”©ñÊ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(½–ğÿÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ã¦ 
+M	java:S106"9Replace this use of System.out or System.err by a logger.(ÕÇ™z
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÒíÚßıÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÅüÑúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ãÊ¬­üÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¶ıúõşÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(å»ëÿüÿÿÿÿ
+@
+java:S1197"*Move the array designators [] to the type.(Ò±ÛÂ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(Š°ù¾ùÿÿÿÿ
+Z
+java:S2147S"DCombine this catch with the one at line 81, which has the same body.(óûìœ
+>	java:S108B")Either remove or fill this block of code.(®œã¼
+S	java:S106D"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ
+V	java:S125J"<This block of commented-out lines of code should be removed.(îÎêÄùÿÿÿÿ
+S	java:S106V"9Replace this use of System.out or System.err by a logger.(Å¨©°üÿÿÿÿ
+[
+java:S2147}"ECombine this catch with the one at line 123, which has the same body.(óûìœ
+>	java:S108o")Either remove or fill this block of code.(®œã¼
+S	java:S106q"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ
+T	java:S106€"9Replace this use of System.out or System.err by a logger.(Æì° úÿÿÿÿ
+\
+java:S2147 "ECombine this catch with the one at line 158, which has the same body.(óûìœ
+T	java:S106—"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ
+T	java:S106£"9Replace this use of System.out or System.err by a logger.(Å¨©°üÿÿÿÿ
+\
+java:S2147Æ"ECombine this catch with the one at line 196, which has the same body.(óûìœ
+T	java:S106½"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ
+T	java:S106É"9Replace this use of System.out or System.err by a logger.(Å¨©°üÿÿÿÿ
+T	java:S106Ñ"9Replace this use of System.out or System.err by a logger.(éí÷„ùÿÿÿÿ
+\
+java:S2147ğ"ECombine this catch with the one at line 238, which has the same body.(óûìœ
+T	java:S106ç"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ
+T	java:S106ó"9Replace this use of System.out or System.err by a logger.(Å¨©°üÿÿÿÿ
+\
+java:S2147–"ECombine this catch with the one at line 276, which has the same body.(óûìœ
+T	java:S106Š"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ
+X
+java:S1075’"ARefactor your code to get this URI from a customizable parameter.(ß¡±Ø
+X
+java:S1075“"ARefactor your code to get this URI from a customizable parameter.(›‘‘Ş
+[	java:S106™"9Replace this use of System.out or System.err by a logger.(Å¨©°üÿÿÿÿ8ã¢ß¦¿0
+V	java:S106£"9Replace this use of System.out or System.err by a logger.(éäºÏ8ŒÛß¦¿0
+c
+java:S2147Ó"ECombine this catch with the one at line 337, which has the same body.(óûìœ8‹Ûß¦¿0
+[	java:S106Ê"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ8Ûß¦¿0
+[	java:S106Ö"9Replace this use of System.out or System.err by a logger.(Å¨©°üÿÿÿÿ8Ûß¦¿0
+c
+java:S2147÷"ECombine this catch with the one at line 373, which has the same body.(ï­£Ä8Ûß¦¿0
+[	java:S106î"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ8­ÄœÓ¿0
