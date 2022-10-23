@@ -1,0 +1,10 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(ùééîşÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÀÖÄŞ
+N	java:S106 "9Replace this use of System.out or System.err by a logger.(¦«á¶
+Q	java:S125!"<This block of commented-out lines of code should be removed.(‹Ÿšˆ
+N	java:S106&"9Replace this use of System.out or System.err by a logger.(Şıü
+o
+java:S1128"RRemove this unused import 'org.springframework.beans.factory.annotation.Required'.(‘™ê¢8ääşı¼0
+g
+java:S1128"ERemove this unused import 'org.springframework.stereotype.Component'.(Ş÷Ñ¸ÿÿÿÿÿ8ääşı¼0
