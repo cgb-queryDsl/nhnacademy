@@ -1,0 +1,29 @@
+
+@
+java:S1197$"*Move the array designators [] to the type.(Íİ­
+t
+java:S1989%"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(°Îşşÿÿÿÿÿ
+E
+java:S1197,"*Move the array designators [] to the type.(‚€†Æÿÿÿÿÿ
+t
+java:S1989-"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(°Îşşÿÿÿÿÿ
+E
+java:S11974"*Move the array designators [] to the type.(ßâİÎşÿÿÿÿ
+t
+java:S19895"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(°Îşşÿÿÿÿÿ
+E
+java:S1197<"*Move the array designators [] to the type.(òÿ˜êøÿÿÿÿ
+t
+java:S1989="YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(°Îşşÿÿÿÿÿ
+h
+java:S1989G"SHandle the following exception that could be thrown by "sendRedirect": IOException.(Âö‡	
+u
+java:S1989P"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ŠÙËøÿÿÿÿ8ç‰›ıÀ0
+]
+java:S1117U";Rename "buyList" which hides the field declared at line 21.(†¥ëóùÿÿÿÿ8´±µıÀ0
+m
+java:S1989W"PHandle the following exception that could be thrown by "getWriter": IOException.(¾šçŞ8òÂ›ıÀ0
+s
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(³÷ ´ùÿÿÿÿ
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ÄÇ®—øÿÿÿÿ8¶±µıÀ0
