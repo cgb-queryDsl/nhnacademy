@@ -1,0 +1,10 @@
+
+p
+java:S1450"ZRemove the "excludeUrls" field and declare it as a local variable in the relevant methods.(½ŸþÅ
+Q	java:S125("<This block of commented-out lines of code should be removed.(¦µ¥×
+X
+java:S1128"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…
+Y
+java:S1128"CRemove this unused import 'javax.servlet.http.HttpServletResponse'.(Á¨ïë
+E
+java:S1068"/Remove this unused "excludeUrls" private field.(½ŸþÅ
