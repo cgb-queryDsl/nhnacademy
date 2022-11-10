@@ -12,3 +12,4 @@
 |22.10.17 ~ 22.10.21 | Java Network Programming|
 |22.10.24 ~ 22.10.28 | Java Web/Servlet |
 |22.10.31 ~ 22.11.04 | TDD / Clean Code|
+|22.11.07 ~ 22.11.11 | DB설계 / SQL |
