@@ -1,0 +1,16 @@
+
+1
+java:S1116"Remove this empty statement.(µ´¦!
+V	java:S125"<This block of commented-out lines of code should be removed.(ÝôàÁøÿÿÿÿ
+Q	java:S125'"<This block of commented-out lines of code should be removed.(†Š¯¶
+R
+java:S1128"<Remove this unused import 'javax.servlet.RequestDispatcher'.(Ëöò¼
+Q
+java:S1128";Remove this unused import 'javax.servlet.ServletException'.(Š‰™Œ
+[
+java:S1128	"@Remove this unused import 'javax.servlet.annotation.WebServlet'.(™ì¢´þÿÿÿÿ
+V
+java:S1128
+";Remove this unused import 'javax.servlet.http.HttpServlet'.(û÷Å›ÿÿÿÿÿ
+K
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ
