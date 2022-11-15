@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>index</title>
+</head>
+<body>
+    <h2 th:text="#{hello}">world</h2>
+
+    <li>
+        <a href="/login" th:text="#{login}"> </a>
+    </li>
+
+    <li>
+       <a href="/student/register" th:text="#{studentRegister}">  </a>
+    </li>
+
+    <hr/>
+    <li>
+        <a href="?locale=ko" th:text="#{ko}">  </a> <Br/>
+    </li>
+
+    <li>
+        <a href="?locale=en" th:text="#{en}">  </a> <br/>
+    </li>
+
+</body>
+</html>

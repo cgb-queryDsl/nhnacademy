@@ -1,0 +1,9 @@
+PUT http://localhost:8080/students/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "변경 된 orc",
+  "email": "orc@nhnacademy.com",
+  "score": 10,
+  "comment": "많이 아쉬워요"
+}
