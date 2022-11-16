@@ -1,4 +1,4 @@
-<html>
+<html xmlns:th="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <title>index</title>
@@ -7,7 +7,11 @@
     <h2 th:text="#{hello}">world</h2>
 
     <li>
-        <a href="/login" th:text="#{login}"> </a>
+        <span th:if="${session.sessionId == null}">  <a href="/login" th:text="#{login}"> </a> </span>
+    </li>
+
+    <li>
+        <span th:unless="${session.sessionId == null}" > <a href="/logout" th:text="#{logout}"/> </a> </span>
     </li>
 
     <li>
@@ -15,6 +19,7 @@
     </li>
 
     <hr/>
+
     <li>
         <a href="?locale=ko" th:text="#{ko}">  </a> <Br/>
     </li>
