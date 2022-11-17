@@ -1,0 +1,17 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>학생 정보 수정</title>
+</head>
+<body>
+<form method="post" th:action="@{/student/{id}/modify(id=${student.id}) }">
+    <span th:text="#{name}"/> : <input type="text" name="name" th:field="${student.name}" />  <br />
+    <span th:text="#{email}"/> : <input type="text" name="email" th:field="${student.email}" /><br />
+    <span th:text="#{score}"/> : <input type="text" name="score" th:field="${student.score}" /><br />
+    <span th:text="#{comment}"/> : <textarea name="comment" rows="10" cols="80" th:text="${student.comment}">  </textarea><br />
+    <br/>
+    <input type="submit" />
+</form>
+
+</body>
+</html>

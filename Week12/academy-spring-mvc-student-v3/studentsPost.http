@@ -1,0 +1,9 @@
+POST http://localhost:8080/students?media=json HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "orc",
+  "email": "nhn@nhnacademy.com",
+  "score": 70,
+  "comment": "조금 부족해요"
+}
