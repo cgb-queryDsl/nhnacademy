@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NHN Mart CS</title>
+</head>
+<body>
+    <h2>고객 문의 서비스</h2>
+    <hr/>
+
+    <form method="get" action="/logout">
+        <input type="submit" value="로그아웃">
+    </form>
+
+    <hr/>
+    <form method="get" action="/customer/registerPost">
+        <button type="submit"> 문의등록 </button>
+    </form>
+
+    <hr/>
+    <h3><span>'</span><span th:text="${customerName}" style="text-decoration: underline"/><span>'</span> 님의 문의 목록</h3>
+
+    <table border="1" style="border-collapse: collapse" width="1000">
+        <tr>
+            <th> 제목 </th>
+            <th> 분류 </th>
+            <th> 작성 시간 </th>
+            <th> 답변 여부 </th>
+        </tr>
+        <tr th:each="post: ${postList}">
+            <td style="padding: 10px;">
+                <a th:href="@{/customer/postList/{postId}(postId=${post.id})}">
+                    <span th:text="${post.title} "></span>
+                </a>
+            </td>
+            <td th:text="${post.category}" style="padding-left: 10px"> </td>
+            <td th:text="${post.writeTime}" style="padding-left: 10px"> </td>
+            <td th:text="${post.answerStatus}" style="padding-left: 10px"> </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

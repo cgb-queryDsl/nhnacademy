@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NHN Mart CS</title>
+</head>
+<body>
+    <h2>문의하기</h2>
+    <hr/>
+
+    <form method="post" action="/customer" enctype="multipart/form-data">
+        <p> <b>제목</b></p>
+        <input type="text" name="title">
+        <hr/>
+
+        <b>분류 </b>:
+        <select name="category">
+            <option> <b>-----분류-----</b></option>
+            <option th:each="category : ${T(com.nhnmart.cs.domain.Category).values()}"
+                    th:value="${category}" th:text="${category}" name="category">
+            </option>
+        </select>
+        <hr/>
+
+        <b> 이미지 추가 </b>:
+        <input type="file" name="file" multiple accept="image/*">
+        <hr/>
+
+        <p> <b>문의 내용 </b> </p>
+        <textarea name="content" rows="10" cols="50" style="resize: none"></textarea>
+
+        <br/>
+
+        <input type="submit" value="등록"/>
+        <input type="submit" value="취소" formmethod="get" formaction="/customer"/>
+    </form>
+
+</body>
+</html>

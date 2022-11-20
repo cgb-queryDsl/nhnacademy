@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NHN Mart CS</title>
+</head>
+<body>
+
+    <h2>문의 내용 상세 조회</h2>
+    <hr/>
+
+    <b>작성자 : </b> <span th:text="${post.customer.getName()}"/> <br/>
+    <b>제목 : </b> <span th:text="${post.title}"/>
+    <b>작성시간 : </b> <span th:text="${post.writeTime}"/>
+    <b>분류 : </b> <span th:text="${post.category}"/> <br/>
+    <b>업로드 이미지 : </b> <br/>
+    <span th:each="file : ${files}">
+        <img th:src="@{/customer/images/{file}(file=${file})}" width="200"/>
+    </span>
+    <hr/>
+
+    <b>문의 내용</b>    <br/>
+    <textarea rows="10" cols="50" style="resize: none" readonly th:text="${post.content}"></textarea>
+    <hr/>
+
+    <div th:if="${post.answerStatus == T(com.nhnmart.cs.domain.AnswerStatus).COMPLETE}">
+        <b>답변 내용</b>
+        <br/>
+        <br/>
+
+        <b>답변 작성 시간 : </b> <span th:text="${post.answer.getAnswerTime()}"/>
+        <b>답변 작성자 : </b>   <span th:text="${post.answer.getAdmin()}"/>
+        <hr/>
+        <b>내용 : </b>    <br/>
+        <textarea rows="10" cols="50" style="resize: none" readonly th:text="${post.answer.getAnswerContent()}"></textarea>
+    </div>
+
+    <form method="get" action="/customer">
+        <input type="submit" value="이전으로">
+    </form>
+
+</body>
+</html>

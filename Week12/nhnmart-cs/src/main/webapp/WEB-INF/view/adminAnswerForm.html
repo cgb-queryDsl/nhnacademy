@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NHN Mart CS</title>
+</head>
+<body>
+
+    <b>작성자 : </b> <span th:text="${post.customer.getName()}"/> <br/>
+    <b>제목 : </b> <span th:text="${post.title}" /> &nbsp;
+    <b>작성시간 : </b> <span th:text="${post.writeTime}"/> &nbsp;
+    <b>분류 : </b> <span th:text="${post.category}"/> <br/>
+    <b>업로드 이미지 : </b>   <br/>
+    <span th:each="file : ${files}">
+        <img th:src="@{/customer/images/{file}(file=${file})}" width="200"/>
+    </span>
+    <hr/>
+
+    <b>문의 내용</b>  <br/>
+    <textarea rows="10" cols="50" style="resize: none" readonly th:text="${post.content}"></textarea>
+    <hr/>
+
+    <form method="post" th:action="@{/admin/postList/{postId}/answerRegister(postId=${post.id})}">
+        <h2>답변</h2>
+        <textarea name="answerContent" rows="10" cols="50" style="resize: none"></textarea>
+        <br/>
+
+        <input type="submit" value="답변 등록"/>
+        <input type="submit" value="취소" formmethod="get" formaction="/admin">
+    </form>
+
+</body>
+</html>
+

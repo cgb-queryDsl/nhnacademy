@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NHN Mart CS</title>
+</head>
+<body>
+    <h2>고객 문의 관리자</h2>
+    <hr/>
+
+    <form method="get" action="/logout">
+        <input type="submit" value="로그아웃">
+    </form>
+
+    <hr/>
+
+    <form method="get" action="/admin/search">
+        <b>분류 </b>:
+        <select name="category">
+            <option> <b>-----분류-----</b></option>
+            <option th:each="category : ${T(com.nhnmart.cs.domain.Category).values()}"
+                    th:value="${category}" th:text="${category}" name="category">
+            </option>
+        </select>
+
+        <input type="submit" value="검색">
+        <input type="submit" value="전체 검색" formmethod="get" formaction="/admin">
+    </form>
+
+    <hr/>
+
+    <b>답변 해야 할 문의들</b>
+
+    <br/>
+    <br/>
+
+    <table border="1" style="border-collapse: collapse" width="1000">
+        <tr>
+            <th> 작성자 </th>
+            <th> 제목 </th>
+            <th> 분류 </th>
+            <th> 작성 시간 </th>
+            <th> 답변 하기 </th>
+        </tr>
+        <tr th:each="post: ${postListYetAnswer}">
+            <td th:text="${post.customer.getName()}" style="padding-left: 10px"></td>
+            <td th:text="${post.title}" style="padding-left: 10px"></td>
+            <td th:text="${post.category}" style="padding-left: 10px"></td>
+            <td th:text="${post.writeTime}" style="padding-left: 10px"></td>
+            <td>
+                <center>
+                    <a th:href="@{/admin/postList/{postId}(postId=${post.id})}">
+                        <button type="button"> 답변 </button>
+                    </a>
+                </center>
+            </td>
+
+        </tr>
+    </table>
+
+</body>
+</html>
