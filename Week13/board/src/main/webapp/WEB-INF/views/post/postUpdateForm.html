@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>게시글 수정</h3>
+    <hr/>
+
+    <form method="post" action="/post/update">
+        <b>게시글 번호 : </b> <input name="postId" th:value="${post.id}" readonly>
+        <br/>
+        <b>제목 : </b>   <input name="title" th:value="${post.title}">
+        <br/>
+
+        <b>작성자 : </b> <span th:text="${post.writer}"/>  &nbsp;
+        <b>작성시간 : </b> <span th:text="${post.writeTime}"/>
+        <hr/>
+
+        <b>파일 : </b>    <br/>
+        <ul th:each="file : ${files}">
+            <li th:text="${file.fileName}"></li>
+        </ul>
+        <hr/>
+
+        <b>내용</b>   <br/>
+        <textarea name="content" th:text="${post.content}" rows="10" cols="60" style="resize: none"/>
+        <br/>
+
+        <input type="submit" value="수정">
+        <a href="/community?page=1">
+            <input type="button" value="취소">
+        </a>
+
+    </form>
+
+</body>
+</html>

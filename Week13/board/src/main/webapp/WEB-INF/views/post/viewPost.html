@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h3>게시물 조회</h3>
+
+    <a href="/community?page=1">
+        <input type="button" value="홈으로">
+    </a>
+    
+    <hr/>
+
+    <b>게시글 번호 : </b> <span th:text="${post.id}"/>
+    <br/>
+    <b>제목 : </b>  <span th:text="${post.title}"/>
+    <br/>
+    <b>작성자 : </b> <span th:text="${post.writer}"/>   &nbsp;
+    <b>작성시간 : </b>  <span th:text="${post.writeTime}"/>
+    <hr/>
+    <b>파일 목록 : </b> <br/>
+    <ul th:each="file : ${files}">
+        <li>
+            <a th:href="|/post/download/file/${file.fileId}|" th:text="${file.fileName}">
+            </a>
+        </li>
+    </ul>
+    <hr/>
+
+    <b>내용</b>   <br/>
+    <p th:text="${post.content}">
+
+    <hr/>
+    <b>댓글</b>   <br/>
+    <form method="post" th:action="@{/post/{postId}/reply(postId=${post.id})}">
+        <input type="text" style="width: 300px;" placeholder="댓글" name="comment">
+        <input type="submit" value="댓글 등록">
+    </form>
+    <br/>
+
+    <div th:each="reply : ${replies}" style="width: 1000px">
+        <div style="border: lightblue 2px solid; width: 700px; float: left">
+            <b>작성자 : </b> <span th:text="${reply.writer}"/>     &nbsp;
+            <b>댓글 작성 시간 : </b> <span th:text="${reply.replyTime}"/>    <br/>
+            <b>댓글 내용 : </b> <span th:text="${reply.comment}"/>
+
+        </div>
+
+        <div style="float: right; width: 280px;"  >
+
+            <span th:if="${loginId} != 1">
+                <span th:if="${reply.userId} == ${loginId}">
+
+                    <form method="get" th:action="@{/post/{postId}/reply/update/{replyId}(postId=${post.id}, replyId=${reply.id})}">
+                        <input type="submit" value="수정">
+                    </form>
+                    <form method="post" th:action="@{/post/{postId}/reply/delete/{replyId}(postId=${postId}, replyId=${reply.id})}">
+                        <input type="submit" value="삭제">
+                    </form>
+
+                </span>
+            </span>
+            <span th:if="${loginId} == 1">
+
+                <form method="get" th:action="@{/post/{postId}/reply/update/{replyId}(postId=${post.id}, replyId=${reply.id})}">
+                    <input type="submit" value="수정">
+                </form>
+
+                <span th:if="${reply.deleted} == 'N'">
+                    <form method="post" th:action="@{/post/{postId}/reply/delete/{replyId}(postId=${postId}, replyId=${reply.id})}">
+                        <input type="submit" value="삭제">
+                    </form>
+                </span>
+
+                <span th:unless="${reply.deleted} == 'N'">
+                    <form method="post" th:action="@{/post/{postId}/reply/restore/{replyId}(postId=${postId}, replyId=${reply.id})}">
+                        <input type="submit" value="복구">
+                    </form>
+                </span>
+
+            </span>
+        </div>
+
+        <br/>
+    </div>
+
+</body>
+</html>

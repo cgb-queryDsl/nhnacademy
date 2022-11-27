@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>NHN 커뮤니티 </h2>
+    <hr/>
+
+    <div th:if="${userNickname != null}">
+        <h4> '<u> <span th:text="${userNickname}"/> </u>' 님 로그인 ON </h4>
+
+        <form method="post" action="/logout">
+            <input type="submit" value="로그아웃">
+        </form>
+        <hr/>
+    </div>
+
+    <div th:if="${userNickname == null}">
+        <form method="get" action="/">
+            <input type="submit" value="로그인">
+        </form>
+    </div>
+
+    <h4>게시글 목록</h4>
+
+    <form method="get" action="/post/register">
+        🖋 <input type="submit" value="게시글 등록">
+    </form>
+
+    <br/>
+
+<!--    <form method="get" action="/community" style="margin-bottom: 15px">-->
+<!--        🔍 <input type="text" name="searchWord" placeholder="검색어"/> <input type="submit" value="검색">-->
+<!--    </form>-->
+
+    <table border="1" style="border-collapse: collapse" width="900">
+        <tr style="background-color: lightblue; color: white">
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자(수정자)</th>
+            <th>작성일시</th>
+            <th>댓글수</th>
+            <th>게시글 보기</th>
+            <th>비고</th>
+        </tr>
+        <tr th:each="post : ${posts}">
+
+            <td style="padding-left: 10px" th:text="${post.id}"></td>
+            <td style="padding-left: 10px" th:text="${post.title}"></td>
+            <td style="padding-left: 10px" th:text="${post.nickname}"></td>
+            <td style="padding-left: 10px" th:text="${post.writeTime}"></td>
+            <td style="padding-left: 10px" th:text="${post.commentCount}" text="0"></td>
+            <td align="center">
+                <a th:href="@{/post/{postId}(postId=${post.id})}">
+                    <input type="button" value="조회">
+                </a>
+            </td>
+            <td align="center">
+                <span th:if="${loginUserId} != 1">
+                    <span th:if="${post.userId} == ${loginUserId}">
+                        <a th:href="@{/post/update/{postId}(postId=${post.id})}">
+                            <input type="button" value="수정"/>
+                        </a>
+                        &nbsp;
+                        <a th:href="@{/post/delete/{postId}(postId=${post.id})}">
+                            <input type="button" value="삭제"/>
+                        </a>
+                    </span>
+                </span>
+
+                <span th:if="${loginUserId} == 1">
+
+
+                        <a th:href="@{/post/update/{postId}(postId=${post.id})}">
+                            <input type="button" value="수정"/>
+                        </a>
+                        &nbsp;
+                        <span th:if="${post.deleted} == 'N'">
+                            <a th:href="@{/post/delete/{postId}(postId=${post.id})}">
+                                <input type="button" value="삭제"/>
+                            </a>
+                        </span>
+
+                        <span th:unless="${post.deleted} == 'N'">
+                            <a th:href="@{/post/restore/{postId}(postId=${post.id})}">
+                                <input type="button" value="복구"/>
+                            </a>
+                        </span>
+
+                </span>
+
+            </td>
+        </tr>
+
+    </table>
+
+    <span th:each="page : ${pages}">
+        <a th:href="@{/community(page=${page})}"> <span th:text="${page}"/></a>
+    </span>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nhnacademy.jdbc.board.mapper.ReplyMapper">
+
+    <insert id="insertReply" parameterType="com.nhnacademy.jdbc.board.domain.dto.InsertReply">
+        insert into Replies(post_id, user_id, comment, created_at)
+        values (#{postId}, #{userId}, #{comment}, now())
+    </insert>
+
+    <select id="getAllReplies" resultType="com.nhnacademy.jdbc.board.domain.dto.ReplyByPost">
+        select R.id as id, U.id as userId, U.nickname as writer, R.comment as comment,
+               R.created_at as replyTime, R.deleted as deleted
+        from Replies as R join Posts as P on R.post_id = P.id
+                          join Users as U on R.user_id = U.id
+        where R.post_id = #{postId}
+    </select>
+
+    <update id="updateReplyDeletedToYes">
+        update Replies set deleted = 'Y' where id = #{replyId}
+    </update>
+
+    <update id="updateReplyDeletedToNo">
+        update Replies set deleted = 'N' where id = #{replyId}
+    </update>
+
+    <select id="getReplyById" resultType="string">
+        select comment from Replies
+        where id = #{replyId}
+    </select>
+
+    <update id="updateReplyById" parameterType="com.nhnacademy.jdbc.board.domain.dto.UpdateReply">
+        update Replies set user_id = #{userId}, comment = #{comment}, created_at = now()
+        where id = #{replyId}
+    </update>
+
+    <select id="getRepliesCountNotDeleted" resultType="long">
+        select count(R.comment) as cnt
+        from Replies as R join Posts as P on R.post_id = P.id
+        where R.deleted = 'N' and P.id = #{postId}
+        group by P.id
+    </select>
+
+    <select id="getRepliesCount" resultType="long">
+        select count(R.comment) as cnt
+        from Replies as R join Posts as P on R.post_id = P.id
+        where P.id = ${postId}
+        group by P.id
+    </select>
+
+</mapper>

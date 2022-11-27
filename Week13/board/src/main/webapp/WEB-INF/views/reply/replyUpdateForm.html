@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h3>댓글 수정</h3>
+    <hr/>
+
+    <form method="post" th:action="@{/post/{postId}/reply/update/{replyId}(postId=${postId}, replyId=${replyId})}">
+        <b>댓글 내용 : </b> <input type="text" name="comment" th:value="${reply}" style="width: 500px;">
+        <br/>
+
+        <input type="submit" value="댓글 수정">
+        <input type="submit" value="취소" formmethod="get" th:formaction="@{/post/{postId}(postId=${postId})}">
+    </form>
+
+</body>
+</html>

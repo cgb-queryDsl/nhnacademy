@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nhnacademy.jdbc.board.mapper.PostMapper">
+    <select id="getPostById" resultType="com.nhnacademy.jdbc.board.domain.Post">
+        select *
+        from Posts
+        where id = #{id}
+    </select>
+
+    <select id="getAllPosts" resultType="com.nhnacademy.jdbc.board.domain.dto.PostByCommunity"
+            parameterType="com.nhnacademy.jdbc.board.domain.dto.PageSizeOffset">
+        select P.id as id, P.title as title, U.nickname as nickname, P.created_at as writeTime,
+               P.deleted as deleted, U.id as userId
+        from Posts as P join Users as U on P.user_id = U.id
+        ORDER BY P.id DESC LIMIT #{size} OFFSET #{offset}
+    </select>
+
+    <select id="getAllPostsNotDeleted" resultType="com.nhnacademy.jdbc.board.domain.dto.PostByCommunity"
+            parameterType="com.nhnacademy.jdbc.board.domain.dto.PageSizeOffset">
+        select P.id as id, P.title as title, U.nickname as nickname, P.created_at as writeTime,
+               P.deleted as deleted, U.id as userId
+        from Posts as P join Users as U on P.user_id = U.id
+        where P.deleted = 'N'
+        ORDER BY P.id DESC LIMIT #{size} OFFSET #{offset}
+    </select>
+
+    <insert id="insertPost" parameterType="com.nhnacademy.jdbc.board.domain.dto.InsertPost">
+        insert into Posts (title, content, created_at, user_id)
+        values (#{title}, #{content}, now(), #{userId})
+    </insert>
+
+    <select id="getLastInsertPostId" resultType="int">
+        select last_insert_id()
+        as id;
+    </select>
+
+    <select id="getViewPostById" resultType="com.nhnacademy.jdbc.board.domain.dto.ViewPost">
+        select P.id as id, P.title as title, P.content as content, P.created_at as writeTime, U.nickname as writer
+        from Posts as P join Users as U on P.user_id = U.id
+        where P.id = #{id}
+    </select>
+
+    <update id="updatePostDeletedToYes">
+        update Posts set deleted = "Y"
+        where id = #{id}
+    </update>
+
+    <update id="updatePostDeletedToNo">
+        update Posts set deleted = "N"
+        where id = #{id}
+    </update>
+
+    <update id="updatePostById" parameterType="com.nhnacademy.jdbc.board.domain.dto.PostUpdateForm">
+        update Posts set title = #{title}, content = #{content}, created_at = now(), user_id = #{userId}
+        where id = #{postId}
+    </update>
+
+    <select id="totalPostCount" resultType="int">
+        select count(*) as count
+        from Posts;
+    </select>
+
+    <select id="totalPostCountNotDeleted" resultType="int">
+        select count(*) as count
+        from Posts
+        where deleted = "N";
+    </select>
+</mapper>
