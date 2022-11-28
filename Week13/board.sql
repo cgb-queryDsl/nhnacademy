@@ -61,13 +61,13 @@ create table Replies (
 
 
 -- 좋아요 테이블
-create table Likes(
+create table Likes (
 	id int auto_increment,
-    post_id int NOT NULL,
-    user_id int NOT NULL,
+    user_id int,
+    post_id int,
     liked char(1) default 'N' check(liked in ('Y', 'N')),
     
-    primary key(id),
+    primary key(id, user_id, post_id),
     foreign key(post_id) references Posts(id),
     foreign key(user_id) references Users(id)
 );
