@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>주민등록등본</h2>
+    <hr/>
+    <b>발급일 : </b> <p style="color: cornflowerblue;" th:text="${reportDate}"/>
+    <b>증명서 확인번호 : </b> <p style="color: cornflowerblue;" th:text="${certificate.certificateConfirmationNumber}"/>
+    <hr/>
+    <b>세대주 성명 : </b>   <p style="color: cornflowerblue;" th:text="${name}"/>
+    <b>세대구성 사유 : </b> <p style="color: cornflowerblue;" th:text="${household.householdCompositionReasonCode}"/>
+    <b>세대구성 일자 : </b> <p style="color: cornflowerblue;" th:text="${household.householdCompositionDate}"/>
+    <hr/>
+
+    <table border="1" style="border-collapse: collapse" width="900">
+        <tr style="background-color: lightgray; color: black;">
+            <th>주소 구분</th>
+            <th>주소</th>
+            <th>신고일</th>
+        </tr>
+        <tr th:each="address : ${addresses}">
+            <td style="padding-left: 10px; color: cornflowerblue" th:text="${address.addressComposition}"></td>
+            <td style="padding-left: 10px; color: cornflowerblue" th:text="${address.address}"></td>
+            <td style="padding-left: 10px; color: cornflowerblue" th:text="${address.reportDate}"></td>
+        </tr>
+    </table>
+
+    <table border="1" style="border-collapse: collapse" width="900">
+        <tr style="background-color: lightgray; color: black;">
+            <th>세대주 관계</th>
+            <th>성명</th>
+            <th>주민등록번호</th>
+            <th>신고일</th>
+            <th>변동사유</th>
+        </tr>
+        <tr th:each="content : ${contents}">
+            <td style="padding-left: 10px; color: cornflowerblue" th:text="${content.relationship}"></td>
+            <td style="padding-left: 10px; color: cornflowerblue" th:text="${content.name}"></td>
+            <td style="padding-left: 10px; color: cornflowerblue" th:text="${content.idNumber}"></td>
+            <td style="padding-left: 10px; color: cornflowerblue" th:text="${content.reportDate}"></td>
+            <td style="padding-left: 10px; color: cornflowerblue" th:text="${content.reasonCode}"></td>
+        </tr>
+    </table>
+
+    <br/>
+
+    <a href="/resident?page=0?&size=5">
+        <input type="button" value="뒤로가기">
+    </a>
+
+
+</body>
+</html>
