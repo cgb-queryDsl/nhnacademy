@@ -1,0 +1,33 @@
+POST localhost:8080/members
+Content-Type: application/json
+
+{
+  "id": "admin",
+  "name": "관리자",
+  "pwd": "admin",
+  "authority": "ROLE_ADMIN"
+}
+
+###
+
+POST localhost:8080/members
+Content-Type: application/json
+
+{
+  "id": "member",
+  "name": "멤버",
+  "pwd": "member",
+  "authority": "ROLE_MEMBER"
+}
+
+###
+
+POST localhost:8080/members
+Content-Type: application/json
+
+{
+  "id": "guest",
+  "name": "게스트",
+  "pwd": "guest",
+  "authority": "ROLE_GUEST"
+}
