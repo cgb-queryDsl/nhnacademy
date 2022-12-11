@@ -23,7 +23,6 @@ public class HomeController {
     public String home(Principal principal, Model model) {
         if (Objects.nonNull(principal)) {
             String name = principal.getName();
-            System.out.println("name = " + name);
             model.addAttribute("residentId", name.split("-")[0]);
         }
 

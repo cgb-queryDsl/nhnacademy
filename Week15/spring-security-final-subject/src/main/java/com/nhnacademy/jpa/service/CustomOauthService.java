@@ -1,5 +1,6 @@
 package com.nhnacademy.jpa.service;
 
+import com.nhnacademy.jpa.CustomAuthenticationToken;
 import com.nhnacademy.jpa.entity.Resident;
 import com.nhnacademy.jpa.repository.resident.ResidentRepository;
 import lombok.Getter;
@@ -9,9 +10,15 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.*;
 import org.springframework.security.authentication.TestingAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthorizationCodeAuthenticationToken;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -19,6 +26,8 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -73,20 +82,24 @@ public class CustomOauthService {
             Authentication authentication =
                     new TestingAuthenticationToken(resident.getResidentSerialNumber()+"-"+resident.getName(),
                             resident.getPassword(), "ROLE_USER");
+            List<GrantedAuthority> authorities = new ArrayList<>();
+            authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 
-            securityContext.setAuthentication(authentication);
+            Authentication authentication1 =
+//                    new OAuth2AuthenticationToken(resident.getName(), resident.getPassword(), "ROLE_USER");
+                    new UsernamePasswordAuthenticationToken(resident.getResidentSerialNumber()+"-"+resident.getName(),
+                            resident.getPassword(), authorities);
+
+            securityContext.setAuthentication(authentication1);
             SecurityContextHolder.setContext(securityContext);
 
-//            HttpSession session = request.getSession(false);
-//
-//            System.out.println(resident);
-//
-//            redisTemplate.opsForHash().put(session.getId(), "username", resident.getId());
-//            redisTemplate.opsForHash().put(session.getId(), "authority", "ROLE_USER");
-//
-//            session.setAttribute("username", resident.getName());
-//            session.setAttribute("authority", "ROLE_USER");
+            HttpSession session = request.getSession(true);
 
+            redisTemplate.opsForHash().put(session.getId(), "oauth-username", resident.getId());
+            redisTemplate.opsForHash().put(session.getId(), "oauth-authority", "ROLE_USER");
+
+            session.setAttribute("username", resident.getName());
+            session.setAttribute("authority", "ROLE_USER");
         }
 
     }
