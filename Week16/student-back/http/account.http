@@ -1,0 +1,15 @@
+GET localhost:9090/accounts
+Content-Type: application/json
+
+###
+
+GET localhost:9090/accounts/1
+Content-Type: application/json
+
+###
+POST localhost:9090/accounts
+Content-Type: application/json
+
+###
+
+DELETE localhost:9090/accounts/1
