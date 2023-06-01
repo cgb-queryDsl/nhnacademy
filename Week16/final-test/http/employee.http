@@ -1,3 +1,0 @@
-GET localhost:8080/department-members?departmentIds=L1005
-Content-Type: application/json
-
